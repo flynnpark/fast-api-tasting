@@ -6,9 +6,7 @@ app = FastAPI()
 
 
 @app.get("/items/")
-async def read_items(
-    q: Optional[str] = Query(None, min_length=3, max_length=50, regex="^fixedquery$")
-):
+async def read_items(q: str = Query("fixedquery", min_length=3)):
     results: Dict[str, Union[List[Dict[str, str]], str]] = {
         "items": [{"item_id": "Foo"}, {"item_id": "Bar"}]
     }
