@@ -1,12 +1,12 @@
 from typing import Dict, List, Optional, Union
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Query
 
 app = FastAPI()
 
 
 @app.get("/items/")
-async def read_items(q: Optional[str] = None):
+async def read_items(q: Optional[str] = Query(None, max_length=50)):
     results: Dict[str, Union[List[Dict[str, str]], str]] = {
         "items": [{"item_id": "Foo"}, {"item_id": "Bar"}]
     }
