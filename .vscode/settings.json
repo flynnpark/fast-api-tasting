@@ -1,5 +1,6 @@
 {
   "editor.formatOnSave": true,
   "python.analysis.typeCheckingMode": "basic",
-  "python.pythonPath": "venv/bin/python3"
+  "python.pythonPath": "venv/bin/python3",
+  "python.formatting.blackPath": "black"
 }
